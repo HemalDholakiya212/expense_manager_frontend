@@ -1,0 +1,186 @@
+{% extends 'header.html' %}
+{% include 'includes/commanHeader.html' %}
+
+{% block content %}
+
+<div class="dashboard-container">
+    <div class="month-picker-container">
+        <label for="selectYear" class="selectYear">Select Year:</label>
+        <!-- <input type="month" id="monthPicker" /> -->
+        <select id="yearSelect">
+            <option value="" disabled selected>Select Year</option>
+        </select>
+
+        <label for="selectMonth" class="selectMonth">Select Month:</label>
+        <select id="monthSelect">
+            <option value="" disabled selected>Select Month</option>
+            <option value="01" >January</option>
+            <option value="02" >February</option>
+            <option value="03" >March</option>
+            <option value="04" >April</option>
+            <option value="05" >May</option>
+            <option value="06" >June</option>
+            <option value="07" >July</option>
+            <option value="08" >August</option>
+            <option value="09" >September</option>
+            <option value="10" >October</option>
+            <option value="11" >November</option>
+            <option value="12" >December</option>
+        </select>
+
+    </div>
+    <br>
+    
+    <!-- Header Section -->
+    <header class="dashboard-header">
+        <h1>Welcome, {{ first_name }} {{last_name}}!</h1>
+        <p>Your financial summary at a glance.</p>
+    </header>
+
+    <!-- Quick Stats Section -->
+    <section class="quick-stats">
+        <div class="stat-card">
+            <h3>Total Spending(Expense)
+            </h3>
+            <p id="totalSpending">Please Set Your Spending!</p>
+        </div>
+        <div class="stat-card">
+            <h3>Total Budget</h3>
+            <p id="totalBudget">Please Set Your Budget!</p>
+        </div>
+        <div class="stat-card">
+            <h3>Savings</h3>
+            <p id="totalSaving"></p>
+            <div id="savingMessage" style="color: red;"></div>
+
+        </div>
+    </section>
+
+    <!-- Visuals Section -->
+    <section class="visuals">
+        <div class="chart" id="expense-pie-chart">
+            <h3>Expense Breakdown</h3>
+            <div id="expensePieChart" style="width: 100%; height: 450px;"></div>
+        </div>
+        <div class="chart" id="spending-trends">
+            <h3>Budget Breakdown</h3>
+            <div id="budgetPieChart" style="width: 100%; height: 450px;"></div>
+        </div>
+        <!-- <div class="chart" id="spending-trends">
+            <h3>Budget Breakdown</h3>
+            <div id="budgetPieChart" style="width: 100%; height: 450px;"></div>
+        </div> -->
+    </section>
+
+    <section class="actions">
+        <a href="{{ url_for('addexpense') }}"><button class="btn" id="openModalBtn">Add Expense</button></a>
+        <!-- <a href="{{ url_for('addreceipt') }}"><button class="btn">Upload Receipt</button></a> -->
+        <a href="{{ url_for('addbudget') }}"><button class="btn">Set/Adjust Budget</button></a>
+        <button class = "btn" id="predictedExpenseBtn">Predict Expense</button>
+    </section>
+    <div id="predictdExpenseValue"></div>
+    <br>
+    <h2>Compare Two Months Expenses</h2>
+
+    <label for="selectMonth" class="selectMonth">Select Month1:</label>
+        <select id="monthSelect1">
+            <option value="" disabled selected>Select Month</option>
+            <option value="01" >January</option>
+            <option value="02" >February</option>
+            <option value="03" >March</option>
+            <option value="04" >April</option>
+            <option value="05" >May</option>
+            <option value="06" >June</option>
+            <option value="07" >July</option>
+            <option value="08" >August</option>
+            <option value="09" >September</option>
+            <option value="10" >October</option>
+            <option value="11" >November</option>
+            <option value="12" >December</option>
+        </select>
+
+    <label for="selectMonth" class="selectMonth">Select Month2:</label>
+        <select id="monthSelect2">
+            <option value="" disabled selected>Select Month</option>
+            <option value="01" >January</option>
+            <option value="02" >February</option>
+            <option value="03" >March</option>
+            <option value="04" >April</option>
+            <option value="05" >May</option>
+            <option value="06" >June</option>
+            <option value="07" >July</option>
+            <option value="08" >August</option>
+            <option value="09" >September</option>
+            <option value="10" >October</option>
+            <option value="11" >November</option>
+            <option value="12" >December</option>
+        </select>
+    
+        <br><br>
+
+        <div class="chart" id="months_comparison">
+            <h3>Two Months Comparison</h3>
+            <div id="months_comparison_chart" style="width: 100%; height: 450px;"></div>
+        </div>
+
+
+    <!-- Actions Section -->
+    
+
+    <!-- Insights Section -->
+    <section class="insights">
+        <h2>Insights & Suggestions</h2>
+        <ul>
+            <li>You're overspending on dining out this month. Consider reducing by 15%.</li>
+            <li>Reallocate funds from Transport to Savings for better budgeting.</li>
+        </ul>
+    </section>
+
+    <!-- Recent Transactions Section -->
+    <section class="recent-transactions">
+        <h2>Recent Transactions</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dec 20, 2024</td>
+                    <td>Groceries</td>
+                    <td>$50</td>
+                </tr>
+                <tr>
+                    <td>Dec 18, 2024</td>
+                    <td>Dining</td>
+                    <td>$30</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</div> 
+
+<script>
+    $(document).ready(function() {
+    // get_expense_data();
+    // get_expense_and_budget_data();
+});
+
+</script>
+<!-- <script>
+    const yearSelect = document.getElementById('yearSelect');
+    const currentYear = new Date().getFullYear();
+    
+    for (let year = currentYear; year >= 2020; year--) {
+        const option = document.createElement('option');
+        option.value = year;
+        option.textContent = year;
+        yearSelect.appendChild(option);
+    }
+</script>    -->
+
+{% include 'includes/commanFooter.html' %}
+{% endblock %}

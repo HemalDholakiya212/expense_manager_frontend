@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <title>Google Pie Chart</title>
+</head>
+<body>
+  <div id="piechart" style="width: 900px; height: 500px;"></div>
+
+  <script>
+    // Load the Google Charts library
+    google.charts.load('current', { 'packages': ['corechart'] });
+
+    // Fetch data and draw the chart
+    async function drawChart() {
+      // Fetch data from the API
+      const response = await fetch('/get-expenses/');
+      const data = await response.json();
+
+      // Prepare data for the chart
+      const chartData = [['Category', 'Total']];
+      data.forEach(item => {
+        chartData.push([item.category, item.total]);
+      });
+
+      // Convert to Google Charts format
+      const dataTable = google.visualization.arrayToDataTable(chartData);
+
+      // Set chart options
+      const options = {
+        title: 'Expenses by Category',
+        is3D: true, // Optional: Use 3D effect
+      };
+
+      // Render the chart
+      const chart = new google.visualization.PieChart(document.getElementById('piechart'));
+      chart.draw(dataTable, options);
+    }
+
+    // Call the function once Google Charts is ready
+    google.charts.setOnLoadCallback(drawChart);
+  </script>
+</body>
+</html>
