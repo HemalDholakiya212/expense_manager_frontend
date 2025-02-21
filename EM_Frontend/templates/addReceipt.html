@@ -1,0 +1,30 @@
+{% extends 'header.html' %}
+{% include 'includes/commanHeader.html' %}
+
+{% block content %}
+<div class="receipt-container">
+    <!-- Modal -->
+    <div id="uploadReceiptModal" class="receipt-upload-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Upload Receipt</h2>
+                <button class="close-btn" id="closeModalBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form action="/upload-receipt" method="POST" enctype="multipart/form-data" id="receiptForm" onsubmit="handleFormSubmit(event)">
+                    <label for="receipt">Select Receipt Image:</label>
+                    <input type="file" id="receipt" name="receipt" accept="image/*" required onchange="previewImage(event)">
+
+                    <div class="receipt-preview">
+                        <img id="imagePreview" src="#" alt="Receipt Preview" style="max-width: 100%; max-height: 200px; display: none;">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn-primary" id="uploadReceipt">Upload Receipt</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<div id="receiptDetails"></div>
+{% endblock %}

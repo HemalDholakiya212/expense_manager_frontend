@@ -1,0 +1,43 @@
+{% extends 'header.html' %}
+{% include 'includes/commanHeader.html' %}
+
+{% block content %}
+<div class="hero">
+    <h1>Welcome to AI-Powered Smart Expense Manager</h1>
+    <p>Your financial assistant for smarter budgeting!</p>
+    <a href="{{ url_for('signin') }}" class="btn">Get Started</a> <!-- Call to action button -->
+</div>
+
+<div class="container">
+    <div class="features">
+        <h2>Key Features</h2>
+        <ul>
+            <li>💡 Automatically categorize your expenses for better organization.</li>
+            <li>📊 Receive personalized budgeting advice based on your spending patterns.</li>
+            <li>🔮 Predict future expenses and plan your finances in advance.</li>
+            <li>📈 Visualize your spending habits through dynamic, interactive charts.</li>
+        </ul>
+    </div>
+    
+    <div class="content">
+        <h2>About This Project</h2>
+        <p>
+            Welcome to the AI-Powered Smart Expense Manager! This platform is designed to make managing your finances
+            simple, efficient, and insightful. With cutting-edge AI features, you can:
+        </p>
+        <ul>
+            <li>Automatically categorize your expenses for better organization.</li>
+            <li>Receive personalized budgeting advice based on your spending patterns.</li>
+            <li>Predict future expenses and plan your finances in advance.</li>
+            <li>Visualize your spending habits through dynamic, interactive charts.</li>
+        </ul>
+        <p>
+            Whether you're a student managing a monthly allowance, a small business owner tracking expenses, or an
+            individual striving for better financial health, this tool is for you!
+        </p>
+    </div>
+</div>
+
+{% include 'includes/commanFooter.html' %}
+{% endblock %}
+

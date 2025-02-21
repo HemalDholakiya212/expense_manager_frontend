@@ -1,0 +1,13 @@
+<div class="headerRow">
+    <div class="headerComponents">
+        {% if not user_login %}
+            <a href="{{ url_for('homepage') }}" class="anchorProp">Home</a>
+            <a href="{{ url_for('signup') }}" class="anchorProp">Sign Up</a>
+            <a href="{{ url_for('signin') }}" class="anchorProp">Sign In</a>
+        {% endif %}
+        {% if user_login %}
+            <a href="{{ url_for('dashBoard') }}" class="anchorProp">Dashboard</a>
+            <a href="{{ url_for('logout') }}" class="anchorProp">Logout</a>
+        {% endif %}
+    </div>
+</div>

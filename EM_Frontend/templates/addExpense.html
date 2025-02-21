@@ -1,0 +1,68 @@
+{% extends 'header.html' %}
+{% include 'includes/commanHeader.html' %}
+
+{% block content %}
+<!-- Modal -->
+<div id="addExpenseModal" class="modal">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h2>Add Expense</h2>
+          <button class="close-btn" id="closeModalBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+          <form id="expenseForm">
+              <label for="expenseAmount">Amount:</label>
+              <input type="number" id="expenseAmount" name="amount" placeholder="E.g., 250.75" step="0.01" min="0" required>
+
+              <label for="expenseCategory">Category:</label>
+              <select id="expenseCategory" name="category" required>
+                  <option value="" disabled selected>Choose a category</option>
+                  <option value="Groceries">Groceries</option>
+                  <option value="Dining">Dining</option>
+                  <option value="Transport">Transport</option>
+                  <option value="Entertainment">Entertainment</option>
+                  <option value="Others">Others</option>
+              </select>
+
+              <label for="expenseDescription">Description:</label>
+              <textarea id="expenseDescription" name="description" placeholder="Describe your expense..." rows="4" required></textarea>
+
+              <label for="expenseDate">Date:</label>
+              <input type="date" id="expenseDate" name="date" required>
+          </form>
+
+      </div>
+      <div class="modal-footer">
+          <button class="btn-primary" id="saveExpenseBtn">Save Expense</button>
+      </div>
+      
+      <p style="text-align: center; font-size: 15px;"><strong>OR</strong></p>
+
+      <div class="modal-body">
+        <form action="/upload-receipt" method="POST" enctype="multipart/form-data" id="receiptForm" onsubmit="handleFormSubmit(event)">
+            <label for="receipt">Select Receipt Image:</label>
+            <input type="file" id="receipt" name="receipt" accept="image/*" required onchange="previewImage(event)">
+
+            <div class="receipt-preview">
+                <img id="imagePreview" src="#" alt="Receipt Preview" style="max-width: 100%; max-height: 200px; display: none;">
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn-primary" id="uploadReceipt">Upload Receipt</button>
+            </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const currentDate = new Date();
+    const maxDate = currentDate.toISOString().split('T')[0]; // Get the current date in YYYY-MM-DD format
+
+    // Set the max attribute to restrict future dates
+    document.getElementById('expenseDate').setAttribute('max', maxDate);
+});
+</script>
+
+<!-- {% include 'includes/commanFooter.html' %} -->
+{% endblock %}

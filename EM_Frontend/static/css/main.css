@@ -1,0 +1,710 @@
+.headerRow{
+    background-color: #00796b;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky; /* Keep navbar fixed */
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Stay above other content */
+}
+
+.headerRow a {
+    color: #ffffff; /* White text */
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 15px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.headerRow a:hover {
+    background-color: #004d40; /* Darker teal on hover */
+}
+
+ /* Hero Section */
+ .hero {
+    background-color: #00897b; /* Medium teal */
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.8em;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin: 10px 0 20px;
+    font-weight: 300;
+}
+
+/* Key Features Section */
+.features {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff; /* White background for content */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.features h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 2em;
+    text-align: center; /* Centered heading */
+}
+
+.features ul {
+    list-style-type: none; /* No bullet points */
+    padding: 0;
+    margin: 15px 0;
+    color: #333;
+}
+
+.features ul li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #e0f2f1; /* Light green background for list items */
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Style */
+.btn {
+    background-color: #ffb74d; /* Soft orange button */
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center; /* Centered text */
+    font-size: 1.2em; /* Slightly larger font */
+}
+
+.btn:hover {
+    background-color: #f57c20; /* Darker orange on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+}
+
+/* Footer */
+.footer {
+    background-color: #00796b; /* Same as navbar */
+    color: white;
+    text-align: center;
+    padding: 15px 0; /* Added padding for more space */
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar a {
+        margin: 5px 0;
+    }
+}
+
+/* sign up */
+.signupContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    background-color: #f5f5f5; /* Optional background */
+    margin: 0; /* Reset margin */
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h2 {
+    text-align: center;
+    color: #3c6e8f;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.form-group button:hover {
+    background-color: #f5a623;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+/* Main Content */
+.content {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff; /* White background for content */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.content h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+.content p {
+    color: #555;
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.content ul {
+    padding: 0;
+    margin: 15px 0;
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #333;
+}
+
+.content ul li {
+    margin-bottom: 8px;
+}
+
+/* Flexbox container */
+.container {
+    display: flex; /* Enables flexbox */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    gap: 20px; /* Adds space between the boxes */
+    justify-content: center; /* Center align the boxes horizontally */
+    padding: 20px; /* Optional padding */
+}
+
+/* Ensure boxes have the same height */
+.features, .content {
+    flex: 1; /* Equal flex-grow for both sections */
+    max-width: 45%; /* Limit the width of each box */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+@media (max-width: 768px) {
+    /* Stack boxes vertically on small screens */
+    .container {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+/* DASHBOARD */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.dashboard-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.dashboard-header {
+    text-align: center;
+    background-color: #00897b;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.quick-stats {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.stat-card {
+    flex: 1;
+    background-color: #ffffff;
+    margin: 0 10px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.stat-card p {
+    font-size: 1.5em;
+    color: #00897b;
+}
+
+.visuals {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.chart {
+    flex: 1;
+    background-color: #ffffff;
+    margin: 0 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.chart h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.placeholder {
+    background-color: #e0f2f1;
+    height: 150px;
+    border-radius: 5px;
+    line-height: 150px;
+    color: #555;
+    font-style: italic;
+}
+
+.actions {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.btn {
+    background-color: #ffb74d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    font-size: 1em;
+}
+
+.btn:hover {
+    background-color: #f57c20;
+}
+
+.insights {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.insights h2 {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.insights ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.insights ul li {
+    background-color: #e0f2f1;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
+}
+
+.recent-transactions {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.recent-transactions h2 {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.recent-transactions table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.recent-transactions table th, .recent-transactions table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.recent-transactions table th {
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+#myPieChart {
+    max-width: 400px; 
+    max-height: 400px; 
+    margin: auto; 
+}
+
+/* General Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s;
+    position: relative;
+}
+
+/* Header Styles */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #e74c3c;
+}
+
+/* Modal Body */
+.modal-body {
+    margin-top: 20px;
+}
+
+.modal-body label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.modal-body input,
+.modal-body select,
+.modal-body textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.modal-body input:focus,
+.modal-body select:focus,
+.modal-body textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Receipt Preview */
+.receipt-preview {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.receipt-preview img {
+    max-width: 100%;
+    max-height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Footer Styles */
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+/* Receipt Container */
+/* .receipt-container {
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} */
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 95%;
+    }
+
+    .modal-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .btn-primary {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+
+.receipt-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between items */
+    margin: 20px; /* Margin around the container */
+}
+
+/* Modal styling */
+.receipt-upload-modal {
+    width: 40%; /* Set a width for the modal */
+    max-width: 500px; /* Max width */
+    background-color: #fff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    padding: 20px; /* Padding inside modal */
+}
+
+/* Receipt details form */
+.receipt-form {
+    width: 55%; /* Set width for receipt details form */
+    background-color: #f9f9f9; /* Light background */
+    padding: 20px; /* Padding around the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+/* Shared styles for input fields */
+.receipt-form input,
+.receipt-form textarea {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside inputs */
+    margin-bottom: 15px; /* Space below inputs */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    color: #333; /* Dark text color */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Submit button styling */
+.btn-submit {
+    background-color: #3498db; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding inside button */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.2s; /* Smooth transition */
+}
+
+/* Submit button hover styles */
+.btn-submit:hover {
+    background-color: #2980b9; /* Darker button color on hover */
+}
+
+/* Modal content styles */
+.modal-content {
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Close button styles */
+.close-btn {
+    background: none; /* No background */
+    border: none; /* No border */
+    font-size: 1.5rem; /* Font size */
+    color: #666; /* Color */
+    cursor: pointer; /* Pointer cursor */
+    transition: color 0.2s; /* Smooth transition */
+}
+
+.close-btn:hover {
+    color: #e74c3c; /* Change color on hover */
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.expenseTable th{
+    background: rgb(213, 210, 210);
+    padding: 8px;
+}
+
+.expenseTable td{
+    padding: 3px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.expenseTable{
+    margin-left: 63px;
+    width: 1082px;
+    height: 256px;
+}
+
+
+
+
+.month-picker-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between labels and dropdowns */
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+}
+
+select {
+    padding: 10px; /* Space inside the dropdown */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+    width: 150px; /* Fixed width for consistency */
+}
+
+select:focus {
+    border-color: #007BFF; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Optional: Style for disabled option */
+select option:disabled {
+    color: #999; /* Grey color for disabled options */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
